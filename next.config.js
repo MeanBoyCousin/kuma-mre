@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+import { withKumaUI } from '@kuma-ui/next-plugin'
 
-module.exports = nextConfig
+export default withKumaUI({
+  reactStrictMode: process.env.VERCEL_ENV === 'development',
+  trailingSlash: true,
+})
